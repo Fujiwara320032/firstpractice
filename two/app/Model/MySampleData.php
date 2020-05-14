@@ -3,6 +3,8 @@ App::uses('AppModel','Model');
 //バリデーション
 class MySampleData extends AppModel {
 
+	//public $hasOne = "GuestBook"; //一対一対応
+	public $hasMany = "GuestBook"; //一対多対応(MySampleDataに多数のGuestBookが入る。一人が何投稿もするイメージ）
 	
 	public $validate = array(
     'name'=>array(

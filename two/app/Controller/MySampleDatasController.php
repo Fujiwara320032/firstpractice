@@ -3,6 +3,14 @@ App::uses('AppController','Controller');
 
 class MySampleDatasController extends AppController {
 
+	public $scaffold; 
+
+	
+	//指定してデータを出す（太で終わる項目だけを3項目ずつ各ページに表示）
+	/*
+	public $paginate = array('page' => 1, 'limit' =>3, 
+    'conditions'=>array("MySampleData.name like '%太'"));
+    */
 
 	function index(){
 		//layout関係
@@ -11,8 +19,12 @@ class MySampleDatasController extends AppController {
 		 $this->set("footer_for_layout","copyright by Fujiwara. 2020.");
         // 以下がデータベース関係
         //all全て、firstデータの最初のものだけをとる、listデータのリストをつくる、countデータ数を得る
-        $datas = $this->MySampleData->find('all');
-		$this->set('datas',$datas);
+        //$datas = $this->MySampleData->find('all');
+		//$this->set('datas',$datas);
+		
+		//ページネーション
+		$this->set('datas',$this->paginate()); //DBへのアクセスはこの一行だけで済む、受け取ったデータの表示はビューが必要
+		
 	}
 	
 	//IDを入力して検索
