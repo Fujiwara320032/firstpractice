@@ -32,7 +32,7 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 [Cake Software Foundation](http://cakefoundation.org) - Promoting development related to CakePHP
 
 
-## Get Support!
+## Get Support!w
 
 [#cakephp](http://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake
 
