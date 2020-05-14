@@ -4,11 +4,11 @@
 	<p><?php echo $msg; ?></p>
 	<p>
 		<?php                                                 
-			echo $this->Form->create(false,array('type'=>'post','action'=>','));
-			echo $this->Form->text('text');
+			echo $this->Form->create(false,array('type'=>'post','action'=>'.'));
+			echo $this->Form->text('text1');
 			echo $this->Form->checkbox('check1');
 			echo $this->Form->label('check1',"checkbox1");
-			echo $this->Form->radio('radio',
+			echo $this->Form->radio('radio1',
 				array('male' => '男性',
 					'female' => '女性'));
 			echo $this->Form->select('select1',

@@ -13,13 +13,13 @@ class SampleController extends AppController {    //classコントローラー�
 		$this->set("msg","Welcome to my page");
 		if($this->request->data){                 //カッコ内にフォームの送信された情報が連想配列としてまとめられる。だからデータがあればフォームに送信されている、なければ普通にアクセスしていると判断
 			$result = "[result]";
-			$result = "<br>text1:".Sanitize::     
-				$stripAll($this->request->data['text1']); //テキストをサニタイズ
-			$result = "<br>check1:".
+			$result .= "<br>text1:".Sanitize::     
+				stripAll($this->request->data['text1']); //テキストをサニタイズ
+			$result .= "<br>check1:".
 				$this->request->data['check1'];    //dataによって取り出す
-			$result = "<br>radio1:".
+			$result .= "<br>radio1:".
 				$this->request->data['radio1'];
-			$result = "<br>select1:".
+			$result .= "<br>select1:".
 				$this->request->data['select1'];
 		} else {
 			$result = "no data.";
